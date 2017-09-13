@@ -1,0 +1,28 @@
+{
+  "name": "jsonata-code-completion",
+  "version": "0.0.1",
+  "description": "jsonata code completion",
+  "main": "start.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allam76/jsonata-code-completion.git"
+  },
+  "keywords": [
+    "jsonata",
+    "code",
+    "completion"
+  ],
+  "author": "martin jonsson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allam76/jsonata-code-completion/issues"
+  },
+  "homepage": "https://github.com/allam76/jsonata-code-completion#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "tape": "^4.8.0"
+  }
+}
