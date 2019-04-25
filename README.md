@@ -1,5 +1,8 @@
 # jsonata-code-completion
-jsonata code completion built to me used in the monaco editor(https://microsoft.github.io/monaco-editor/index.html)
+jsonata code completion built to be used in the monaco editor.
+
+* monaco (https://microsoft.github.io/monaco-editor/index.html)
+* jsonata (https://github.com/jsonata-js/jsonata)
 
 This is a code completer based on json schemas both for source and target data. Jsonata allows to build a json from another json input. Added with schemas for both input and output, this will add code completion. Note that for vscode, more work has to be done since vscode uses a language server.
 
@@ -43,5 +46,5 @@ browser:
 npm run browserify
 node tests/server.js
 
-goto http://localhost:1234/examples/index.html
+http://localhost:1234/examples/index.html
 ```
