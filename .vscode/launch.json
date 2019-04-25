@@ -7,8 +7,25 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Run Tests",
-            "program": "${workspaceRoot}/test"
+            "name": "Example",
+            "program": "${workspaceRoot}/examples/simpleExample.js",
+            "skipFiles": [
+                //"${workspaceFolder}/node_modules/**/*.js",
+                "<node_internals>/**/*.js"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Example MJS",
+            "program": "${workspaceRoot}/examples/test.mjs",
+            "runtimeArgs": [
+                "--experimental-modules"
+            ],
+            "skipFiles": [
+                //"${workspaceFolder}/node_modules/**/*.js",
+                "<node_internals>/**/*.js"
+            ]
         }
     ]
 }

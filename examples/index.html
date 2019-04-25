@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	<link rel="stylesheet" data-name="vs/editor/editor.main" href="../node_modules/monaco-editor/min/vs/editor/editor.main.css">
+</head>
+<body>
+
+<h2>Monaco Editor Jsonata code completion sample</h2>
+<div id="container" style="width:800px;height:600px;border:1px solid grey"></div>
+<script src="https://cdn.jsdelivr.net/npm/jsonata/jsonata.js"></script>
+<script src="../dist/proposals.js"></script>
+
+<script>var require = { paths: { 'vs': '../node_modules/monaco-editor/min/vs' } };</script>
+<script src="../node_modules/monaco-editor/min/vs/loader.js"></script>
+<script src="../node_modules/monaco-editor/min/vs/editor/editor.main.nls.js"></script>
+<script src="../node_modules/monaco-editor/min/vs/editor/editor.main.js"></script>
+
+
+<script>
+    monaco.languages.register({ id: 'jsonata' });
+    monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
+		validate: true,
+		enableSchemaRequest: true
+	});
+
+    proposals;
+
+    monaco.languages.registerCompletionItemProvider("jsonata", {
+            provideCompletionItems(model, position, context, token) {
+                const textUntilPosition = model.getValueInRange({startLineNumber: 1, startColumn: 1, endLineNumber: position.lineNumber, endColumn: position.column});
+                const promise = new Promise(async (resolve, reject) => {
+                    var exp = jsonata(textUntilPosition,{recover: true});
+                    var options = {
+                        source: textUntilPosition
+                    }
+                    var data = await proposals(exp.ast(), options);
+                    resolve(data);
+                });
+                return promise;
+            },
+            resolveCompletionItem(model, position, item, token) {
+                return item;
+            }
+    });
+
+	var editor = monaco.editor.create(document.getElementById('container'), {
+        value: `        
+        /*sourceSchema=http://localhost:1234/schemas/testSchema.json*/
+        /*targetSchema=http://localhost:1234/schemas/testSchema.json*/
+        {
+            "obj": obj.name.{
+                "aaa":{
+                    "obj1":{`,
+		language: 'jsonata'
+	});
+</script>
+
+</body>
+</html>

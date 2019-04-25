@@ -1,0 +1,23 @@
+{
+    "type":"object",
+    "properties":{
+        "name":{"type":"string"},
+        "obj":{
+            "type":"object",
+            "properties":{
+                "name":{"type":"string"},
+                "aaa":{
+                    "type":"object",
+                    "properties":{
+                        "name":{"type":"string"},
+                        "obj1":{
+                            "properties":{
+                                "name":{"type":"string"}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

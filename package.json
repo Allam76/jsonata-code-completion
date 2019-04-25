@@ -4,7 +4,10 @@
   "description": "jsonata code completion",
   "main": "start.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "regenerator": "babel src --out-dir dist --presets=@babel/env",
+    "browserify": "browserify src/proposal.js --outfile dist/proposal.js --standalone proposal",
+    "modules": "babel src --out-dir dist --plugins transform-commonjs-es2015-modules"
   },
   "repository": {
     "type": "git",
@@ -22,7 +25,19 @@
   },
   "homepage": "https://github.com/allam76/jsonata-code-completion#readme",
   "dependencies": {
+    "express": "^4.16.4",
+    "json-schema-deref-sync": "^0.10.0",
+    "jsonata": "^1.6.4",
     "lodash": "^4.17.4",
+    "node-fetch": "^2.3.0",
     "tape": "^4.8.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-plugin-transform-commonjs-es2015-modules": "^4.0.1",
+    "browserify": "^16.2.3",
+    "monaco-editor": "^0.16.2"
   }
 }
