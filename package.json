@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "regenerator": "babel src --out-dir dist --presets=@babel/env",
-    "browserify": "browserify src/proposal.js --outfile dist/proposal.js --standalone proposal",
+    "browserify": "browserify src/proposals.js --outfile dist/proposal.js --standalone proposal",
     "modules": "babel src --out-dir dist --plugins transform-commonjs-es2015-modules"
   },
   "repository": {
@@ -26,11 +26,11 @@
   "homepage": "https://github.com/allam76/jsonata-code-completion#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "json-schema-deref-sync": "^0.10.0",
-    "jsonata": "^1.6.4",
-    "lodash": "^4.17.4",
-    "node-fetch": "^2.3.0",
-    "tape": "^4.8.0"
+    "json-schema-deref-sync": "^0.14.0",
+    "jsonata": "^1.8.4",
+    "lodash": "^4.17.20",
+    "node-fetch": "^2.6.1",
+    "tape": "^5.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
