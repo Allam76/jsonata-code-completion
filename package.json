@@ -28,7 +28,7 @@
     "express": "^4.16.4",
     "json-schema-deref-sync": "^0.14.0",
     "jsonata": "^1.8.4",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",
     "tape": "^5.1.1"
   },
