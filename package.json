@@ -29,7 +29,7 @@
     "json-schema-deref-sync": "^0.14.0",
     "jsonata": "^1.8.4",
     "lodash": "^4.17.20",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7",
     "tape": "^5.1.1"
   },
   "devDependencies": {
